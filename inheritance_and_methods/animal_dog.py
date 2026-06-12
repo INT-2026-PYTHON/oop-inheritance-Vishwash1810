@@ -67,3 +67,36 @@ Rex is a Beagle
 =================================================
 
 """
+
+# PARENT CLASS
+class Animal:
+    def __init__(self, name, sound):
+        self.name = name
+        self.sound = sound
+
+    def speak(self):
+        print(f"{self.name} says {self.sound}")
+
+
+# CHILD CLASS
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name, "Woof")
+        self.breed = breed
+
+    def describe(self):
+        print(f"{self.name} is a {self.breed}")
+
+
+# DRIVER CODE
+if __name__ == "__main__":
+    a = Animal("Cat", "Meow")
+    a.speak()
+
+    d1 = Dog("Buddy", "Labrador")
+    d1.speak()
+    d1.describe()
+
+    d2 = Dog("Rex", "Beagle")
+    d2.speak()
+    d2.describe()
